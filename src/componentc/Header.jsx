@@ -6,7 +6,7 @@ export const Header = () =>{
         <StuleHeader className="app-header">
           <ul className='app-header-ul'>
               <li className='app-header-li'>Соцсеть</li>
-              <li className='app-header-li'><img src="https://thypix.com/wp-content/uploads/2018/05/Sommerlandschaft-Bilder-55.jpg" alt="" /></li>
+              <li className='app-header-li'><img src="https://avatarko.ru/img/kartinka/1/avatarko_anonim.jpg" alt="" /></li>
           </ul>
         </StuleHeader>
     )
