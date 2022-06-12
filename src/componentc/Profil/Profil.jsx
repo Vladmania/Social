@@ -1,6 +1,6 @@
 import React from 'react';
-import {StuleProfil} from '../Stule/StuleProfil'
-import { Post } from './Post';
+import {StuleProfil} from './StuleProfil'
+import { Post } from '../Post/Post';
 
 export const Profil = () =>{
     return(
@@ -16,8 +16,8 @@ export const Profil = () =>{
       </div>
       <div>
         <div>My post</div>
-        <Post massage ="Privet"/>
-        
+        <Post massage ="Privet"
+              like = "4"/>
       </div>
       </div>
       </StuleProfil>

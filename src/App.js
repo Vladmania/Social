@@ -1,6 +1,6 @@
-import { Header } from './componentc/Header';
-import { Navbar } from './componentc/Navbar';
-import { Profil } from './componentc/Profil';
+import { Header } from './componentc/Header/Header';
+import { Navbar } from './componentc/Navbar/Navbar';
+import { Profil } from './componentc/Profil/Profil';
 import {Headers} from './Stule'
 
 

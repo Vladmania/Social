@@ -1,5 +1,5 @@
 import React from 'react';
-import {StuleHeader} from '../Stule/StuleHeader'
+import {StuleHeader} from './StuleHeader'
 
 export const Header = () =>{
     return(

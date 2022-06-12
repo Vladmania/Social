@@ -1,5 +1,5 @@
 import React from 'react';
-import {StuleNavbar} from '../Stule/StuleNavbar'
+import {StuleNavbar} from './StuleNavbar'
 
 export const Navbar = () =>{
     return(
