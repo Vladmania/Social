@@ -10,4 +10,7 @@ export const StuleProfil = styled.section`
         width: 108px;
         height: 100px;
     }
+    .posts{
+        margin-top: 100px;
+    }
     `

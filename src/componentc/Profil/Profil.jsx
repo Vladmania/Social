@@ -12,12 +12,15 @@ export const Profil = () =>{
       <div>
       <div>
         <div className="app-profil-info">Владислав Духанин</div>
-        <input /><button>Отправить</button>
       </div>
-      <div>
+      
+      <div className='posts'>
+      <input /><button>Отправить</button>
         <div>My post</div>
         <Post massage ="Privet"
-              like = "4"/>
+              like = "4"
+              niks = "Владос"/>
+              
       </div>
       </div>
       </StuleProfil>
