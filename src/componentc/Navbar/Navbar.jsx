@@ -1,12 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {StuleNavbar} from './StuleNavbar'
 
 export const Navbar = () =>{
     return(
       <StuleNavbar>
-      <NavLink to ='/profil'>Моя страница</NavLink>
-      <NavLink to ='/dialogs'>Мессенджер</NavLink>
+      <Link to ='/'>Моя страница</Link>
+      <Link to ='/dialogs'>Мессенджер</Link>
       <a href='#'>Музыка</a>
       <a href='#'>Новости</a>
     </StuleNavbar>

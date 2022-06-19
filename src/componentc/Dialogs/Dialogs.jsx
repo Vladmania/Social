@@ -1,18 +1,40 @@
+import { NavLink} from 'react-router-dom'
 import {StuleDialods} from './StyleDialogs'
 
-export const Dialogs = () =>{
+
+
+const DialogItem = (props) =>{
+    return(
+        <div className="dialogs_item" id={props.id}>
+        <NavLink to ={`${props.id}`}>{props.name}</NavLink></div> 
+    )
+}
+
+
+
+const DialogMessage = (props) =>{
+    return(
+        <div className="dialog_massege_items" id={props.id }>{props.massege}</div>
+    )
+}
+
+ 
+
+export const Dialogs = (props) =>{
+
+    const massegesDialog = props.messegesUser
+     .map( item => <DialogMessage massege ={item.messege} id = {item.id}/>)
+
+    const dialogsUser = props.dialogUser
+     .map( dialog => <DialogItem name={dialog.name} id = {dialog.id}/>)
+
     return(  
         <StuleDialods className="dialogs">
             <div className="dialogs_person">
-                <div className="dialogs_item">Сергей</div>
-                <div className="dialogs_item">Динис</div>
-                <div className="dialogs_item">Настя</div>
-                <div className="dialogs_item">Владос</div>
+            {dialogsUser}
             </div>
             <div className="dialogs_massege">
-                <div className="dialog_massege_items">Привет</div>
-                <div className="dialog_massege_items">Как дела</div>
-                <div className="dialog_massege_items">Что делаешь?</div>
+                {massegesDialog}
             </div>
         </StuleDialods>
     )
