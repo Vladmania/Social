@@ -1,12 +1,28 @@
 import React from 'react';
 import {StuleProfil} from './StuleProfil'
 import { Post } from '../Post/Post';
+import { addPost } from '../Redux/State';
 
 export const Profil = (props) =>{
  
 
 const potsData = props.postData
 .map( posts => <Post massage={posts.messege} like={posts.like} niks={posts.niks} id={posts.id} /> )
+
+let znach
+
+function qwe(e){
+ znach = e.target.value
+}
+
+const valueInput = (e) =>{
+   props.addPost(znach)
+}
+
+
+  
+
+
 
     return(
       <><StuleProfil>
@@ -20,7 +36,7 @@ const potsData = props.postData
           </div>
 
           <div className='posts'>
-            <input /><button>Отправить</button>
+            <input onChange={qwe}/><button onClick={valueInput}>Отправить</button>
             <div>My post</div>
 
           </div>
