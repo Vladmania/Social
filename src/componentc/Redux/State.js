@@ -1,4 +1,4 @@
-import { rerender } from "../../rerender"
+import { rerender } from "../../index"
 
 
 export let state ={
@@ -8,13 +8,17 @@ export let state ={
         {name: 'Nastia', id: '3'},
         {name: 'Vlad', id: '4'},
         {name: 'Vlad', id: '5'},
-    ] ,
-    
+    ],
+     
+
+    ProfilPage:{
     postData: [
         {messege: 'Привет', id: 1, like: 4, niks: 'Vlad'},
         {messege: 'Как дела', id: 2, like: 92, niks: "Sergei"},
         {messege: 'Что делаеши', id: 3, like: 0, niks: "Dinis"},
     ],
+    newTextPost: ""
+       },
     
     messegeItemData: [
         {messege: 'Привет', id: '1'},
@@ -33,8 +37,14 @@ export const addPost = (post) =>{
         niks: "Vlad"
     }
 
-    state.postData.push(itemPost)
-    rerender(state)
+    state.ProfilPage.postData.push(itemPost)
+   rerender(state)
 }
 
-console.log(state.postData);
+
+export let appdateNewPostText = (Text) =>{
+    state.ProfilPage.newTextPost = Text
+    rerender(state)                      
+}
+
+window.state = state.ProfilPage.newTextPost

@@ -17,7 +17,10 @@ function App(props) {
       <div>
         <Routes>
         <Route path='/dialogs/*' element={<Dialogs dialogUser ={props.state.dialogsItemData} messegesUser ={props.state.messegeItemData}/>} />
-        <Route path='/' element={<Profil postData={props.state.postData} addPost ={props.addPost} />} />
+        <Route path='/' element={<Profil postData={props.state.ProfilPage.postData}  
+                                         addPost ={props.addPost} 
+                                         newPostText={props.state.ProfilPage.newTextPost}
+                                         appdateNewPostText ={props.appdateNewPostText}/>} />
         </Routes>
         
       </div>

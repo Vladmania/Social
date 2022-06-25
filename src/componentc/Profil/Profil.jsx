@@ -5,17 +5,17 @@ import { addPost } from '../Redux/State';
 
 export const Profil = (props) =>{
  
-
+debugger;
 const potsData = props.postData
 .map( posts => <Post massage={posts.messege} like={posts.like} niks={posts.niks} id={posts.id} /> )
 
 let znach
 
-function qwe(e){
- znach = e.target.value
+ const onPostChange = (e) =>{
+ props.appdateNewPostText(e.target.value)
 }
 
-const valueInput = (e) =>{
+const valueInput = () =>{
    props.addPost(znach)
 }
 
@@ -36,7 +36,7 @@ const valueInput = (e) =>{
           </div>
 
           <div className='posts'>
-            <input onChange={qwe}/><button onClick={valueInput}>Отправить</button>
+            <input onChange={onPostChange} value ={props.newPostText}/><button onClick={valueInput}>Отправить</button>
             <div>My post</div>
 
           </div>
