@@ -7,7 +7,6 @@ import {Headers} from './Stule'
 
 
 function App(props) {
-
   return (
     <BrowserRouter>
    <Headers className="app-mein">
@@ -16,11 +15,14 @@ function App(props) {
       <Navbar />
       <div>
         <Routes>
-        <Route path='/dialogs/*' element={<Dialogs dialogUser ={props.state.dialogsItemData} messegesUser ={props.state.messegeItemData}/>} />
         <Route path='/' element={<Profil postData={props.state.ProfilPage.postData}  
                                          addPost ={props.addPost} 
                                          newPostText={props.state.ProfilPage.newTextPost}
                                          appdateNewPostText ={props.appdateNewPostText}/>} />
+                                         
+        <Route path='/dialogs/*' element={<Dialogs dialogUser ={props.state.dialogsItemData} 
+                                                   messegesUser ={props.state.messegeItemData}/>} />
+        
         </Routes>
         
       </div>

@@ -1,26 +1,24 @@
 import React from 'react';
 import {StuleProfil} from './StuleProfil'
 import { Post } from '../Post/Post';
-import { addPost } from '../Redux/State';
+
 
 export const Profil = (props) =>{
  
-debugger;
 const potsData = props.postData
 .map( posts => <Post massage={posts.messege} like={posts.like} niks={posts.niks} id={posts.id} /> )
 
-let znach
-
  const onPostChange = (e) =>{
- props.appdateNewPostText(e.target.value)
+  let znach = e.target.value
+ props.appdateNewPostText(znach)
+ console.log(znach);
 }
 
-const valueInput = () =>{
-   props.addPost(znach)
+let keydrop = (e) =>{
+  if(e.key === "Enter"){
+    props.addPost()
+  }
 }
-
-
-  
 
 
 
@@ -36,12 +34,15 @@ const valueInput = () =>{
           </div>
 
           <div className='posts'>
-            <input onChange={onPostChange} value ={props.newPostText}/><button onClick={valueInput}>Отправить</button>
+            <input onChange={onPostChange}
+                   onKeyDown={keydrop}/>
+            <button onClick={props.addPost}>Отправить</button>
             <div>My post</div>
 
           </div>
         </div>
       </StuleProfil>
-      {potsData}</>
+      {potsData}
+      </>
     )
 }
