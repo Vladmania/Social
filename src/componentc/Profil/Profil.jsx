@@ -4,19 +4,19 @@ import { Post } from '../Post/Post';
 
 
 export const Profil = (props) =>{
- 
+  debugger;
+  
+
 const potsData = props.postData
 .map( posts => <Post massage={posts.messege} like={posts.like} niks={posts.niks} id={posts.id} /> )
 
  const onPostChange = (e) =>{
-  let znach = e.target.value
- props.appdateNewPostText(znach)
- console.log(znach);
+ props.upDataPostText(e.target.value)
 }
 
 let keydrop = (e) =>{
   if(e.key === "Enter"){
-    props.addPost()
+    props.upDataPost()
   }
 }
 
@@ -35,8 +35,9 @@ let keydrop = (e) =>{
 
           <div className='posts'>
             <input onChange={onPostChange}
-                   onKeyDown={keydrop}/>
-            <button onClick={props.addPost}>Отправить</button>
+                   onKeyDown={keydrop}
+                   value={props.newTextPost}/>
+            <button onClick={() =>props.upDataPost()}>Отправить</button>
             <div>My post</div>
 
           </div>

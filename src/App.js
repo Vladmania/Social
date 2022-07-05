@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Dialogs } from './componentc/Dialogs/Dialogs';
 import { Header } from './componentc/Header/Header';
 import { Navbar } from './componentc/Navbar/Navbar';
-import { Profil } from './componentc/Profil/Profil';
+import {  ProfilConteiners } from './componentc/Profil/ProfilConteiners';
 import {Headers} from './Stule'
+import { DialogConteiners } from './componentc/Dialogs/DialogConteiners'
 
 
 function App(props) {
@@ -15,13 +15,9 @@ function App(props) {
       <Navbar />
       <div>
         <Routes>
-        <Route path='/' element={<Profil postData={props.state.ProfilPage.postData}  
-                                         addPost ={props.addPost} 
-                                         newPostText={props.state.ProfilPage.newTextPost}
-                                         appdateNewPostText ={props.appdateNewPostText}/>} />
+        <Route path='/' element={< ProfilConteiners />} />
                                          
-        <Route path='/dialogs/*' element={<Dialogs dialogUser ={props.state.dialogsItemData} 
-                                                   messegesUser ={props.state.messegeItemData}/>} />
+        <Route path='/dialogs/*' element={<DialogConteiners />} />
         
         </Routes>
         
