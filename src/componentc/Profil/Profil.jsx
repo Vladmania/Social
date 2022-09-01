@@ -4,7 +4,7 @@ import { Post } from '../Post/Post';
 
 
 export const Profil = (props) =>{
-  debugger;
+ 
   
 
 const potsData = props.postData
@@ -28,9 +28,10 @@ let keydrop = (e) =>{
           <img src="https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg"></img>
           <button className="app-profil-btn-redactor">Редактировать</button>
         </div>
-        <div>
-          <div>
-            <div className="app-profil-info">Владислав Духанин</div>
+        <div className='app-profil-info'>
+          <div className='add-profil-name_status'>
+            <div className="app-profil-name">Владислав Духанин</div>
+            <div className='add-profil-status'>установить статус:</div>
           </div>
 
           <div className='posts'>
@@ -38,7 +39,6 @@ let keydrop = (e) =>{
                    onKeyDown={keydrop}
                    value={props.newTextPost}/>
             <button onClick={() =>props.upDataPost()}>Отправить</button>
-            <div>My post</div>
 
           </div>
         </div>

@@ -9,6 +9,7 @@ export const Navbar = () =>{
       <Link to ='/dialogs'>Мессенджер</Link>
       <a href='#'>Музыка</a>
       <a href='#'>Новости</a>
+      <Link to = '/users'>Пользователи</Link>
     </StuleNavbar>
     )
 }

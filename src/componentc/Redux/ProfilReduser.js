@@ -4,11 +4,7 @@ const ADD_POST = "ADD_POST"
 const APP_DATE_NEW_POST_TEXT = "APP-DATE-NEW-POST-TEXT"
 
 export const initState = {
-    postData: [
-        {messege: 'Привет', id: 1, like: 4, niks: 'Vlad'},
-        {messege: 'Как дела', id: 2, like: 92, niks: "Sergei"},
-        {messege: 'Что делаеши', id: 3, like: 0, niks: "Dinis"},
-    ],
+    postData: [],
     newTextPost: ''
 }
 export const ProfilReduser = (store = initState, action) =>{
