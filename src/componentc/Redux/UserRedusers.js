@@ -1,14 +1,18 @@
 
-
 const SET_USERS = "SET_USERS"
-const APP_DATE_NEW_POST_TEXT = "APP-DATE-NEW-POST-TEXT"
 const FOLLOW = "FOLLOW"
 const UNFOLLOW ="UNFOLLOW"
+const SET_CURRENT_PAGE = "SET_CURRENT_PAGE"
+const SET_TOTAL_USER_COUNT = "SET_TOTAL_USER_COUNT"
+
 export const initState = {
-    users: []
+    users: [],
+    pageSize: 5,
+    totalUserCount: 0,
+    currentPage: 1,
 }
+
 export const UserReduser = (store = initState, action) =>{
-    debugger;
     switch(action.type){
         
         case FOLLOW:
@@ -34,9 +38,16 @@ export const UserReduser = (store = initState, action) =>{
         }
     case SET_USERS:
         return{
-            ...store, users: [...store.users, ...action.users]
+            ...store, users: [...action.users]
         }
-    
+        case SET_CURRENT_PAGE:
+        return{
+            ...store, currentPage: action.currentPage
+        }
+        case SET_TOTAL_USER_COUNT:
+            return{
+                ...store, totalUserCount: action.totalUserCount
+            }
         default: return store
     }
 
@@ -46,4 +57,6 @@ export const UserReduser = (store = initState, action) =>{
 export const followAC = (userId) => ({ type: FOLLOW, userId })
 export const unfollowAC = (userId) => ({ type: UNFOLLOW, userId })
 export const setusersAC = (users) => ({ type: SET_USERS,  users })
+export const setCurrentPageAC = (p) => ({type: SET_CURRENT_PAGE, currentPage: p})
+export const setTotalUserCountAC = (totalCount) => ({type: SET_TOTAL_USER_COUNT, totalUserCount: totalCount })
 

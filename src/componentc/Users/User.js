@@ -1,7 +1,7 @@
 import {StuleUsers} from './StuleUsers'
 
 export function User(props){
-    debugger;
+    
     return(
         <StuleUsers>
             <div className='user_oblojka'>

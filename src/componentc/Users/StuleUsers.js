@@ -17,4 +17,11 @@ img{
     display: flex;
     flex-direction: column;
 }
+.namberSize{
+    font-family: fantasy;
+    cursor: pointer;
+}
+.allSize{
+    cursor: pointer;
+}
 `
