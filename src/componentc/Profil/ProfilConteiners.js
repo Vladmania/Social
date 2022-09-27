@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { Profil } from "./Profil";
-import { addPostProfil, addDateNewPostText } from '../Redux/ProfilReduser'
+import { addPostProfil, addDateNewPostText, addDateLike } from '../Redux/ProfilReduser'
 
 let mapStateToProps = (state) =>{
     return {
@@ -17,6 +17,9 @@ let mapDispatchToProps = (dispatch) =>{
         upDataPostText: (payload) =>{
             dispatch(addDateNewPostText(payload))
         },
+        upDateLike: (postId) =>{
+            dispatch(addDateLike(postId))
+        }
     }
 }
 

@@ -2,9 +2,12 @@ import * as axios from 'axios'
 import {StuleUsers} from './StuleUsers'
 import {User} from './User'
 
+
 export function Users(props){
     if(props.users.length === 0){
+        props.setFetching(true)
     axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${props.currentPage}&count=${props.pageSize}`).then(respons =>{
+        props.setFetching(false)
         props.upDatasetusers(respons.data.items)
         props.setTotalUserCount(respons.data.totalCount)
     })
@@ -20,13 +23,16 @@ export function Users(props){
 
     let onChengetClic=(p)=>{
         props.setCurrentPage(p)
+        props.setFetching(true)
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${props.pageSize}`).then(respons =>{
+            props.setFetching(false)
             props.upDatasetusers(respons.data.items)
         })
     }
    
     return(
         <>
+        {props.fetching ? <img src='https://i.pinimg.com/originals/3b/4e/10/3b4e109d6b621ed5a9249769afbd4dfa.gif'/> : null}
         <StuleUsers>
             {page.map(p => <span className={props.currentPage === p ? "namberSize" : "allSize"}
                                              onClick={() => onChengetClic(p)}>{p}</span>)}
@@ -34,6 +40,7 @@ export function Users(props){
         <div>{props.users.map(p => <User id={p.id} 
                                          followid={p.followid} 
                                          status={p.status} 
+                                         photo={p.photos.small}
                                          name={p.name} 
                                          follow={props.upDatafollow} 
                                          unfollow={props.upDataunfollow}

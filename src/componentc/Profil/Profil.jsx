@@ -8,7 +8,7 @@ export const Profil = (props) =>{
   
 
 const potsData = props.postData
-.map( posts => <Post massage={posts.messege} like={posts.like} niks={posts.niks} id={posts.id} /> )
+.map( posts => <Post addLike={props.upDateLike} massage={posts.messege} like={posts.like} niks={posts.niks} id={posts.id} /> )
 
  const onPostChange = (e) =>{
  props.upDataPostText(e.target.value)
@@ -20,7 +20,7 @@ let keydrop = (e) =>{
   }
 }
 
-
+debugger
 
     return(
       <><StuleProfil>
