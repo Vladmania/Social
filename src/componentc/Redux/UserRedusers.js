@@ -15,6 +15,7 @@ export const initState = {
 }
 
 export const UserReduser = (store = initState, action) =>{
+    
     switch(action.type){
         
         case FOLLOW:

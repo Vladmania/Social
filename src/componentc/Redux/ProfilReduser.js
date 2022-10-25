@@ -1,16 +1,16 @@
-
-
 const ADD_POST = "ADD_POST"
 const APP_DATE_NEW_POST_TEXT = "APP-DATE-NEW-POST-TEXT"
 const APP_DATE_LIKE = "APP_DATE_LIKE"
+const SET_PROFIL = "SET_PROFIL"
 
 export const initState = {
     postData: [],
-    newTextPost: ''
+    newTextPost: '',
+    profil: null,
 }
 
 export const ProfilReduser = (store = initState, action) =>{
-    debugger;
+    
     switch(action.type){
         case ADD_POST:{ 
         let itemPost = {
@@ -41,6 +41,11 @@ export const ProfilReduser = (store = initState, action) =>{
                 return p
              })} 
     }
+    case SET_PROFIL:{
+        return{
+            ...store, profil: action.profil
+        }
+    }
         default: return store
     }
 
@@ -50,3 +55,4 @@ export const ProfilReduser = (store = initState, action) =>{
 export const addDateLike = (postId) =>({type: APP_DATE_LIKE, postId})
 export const addPostProfil = () => ({type: ADD_POST})
 export const addDateNewPostText = (payload) => ({type: APP_DATE_NEW_POST_TEXT , payload: payload})
+export const setTotalUserProfil = (profil) =>({type: SET_PROFIL, profil})

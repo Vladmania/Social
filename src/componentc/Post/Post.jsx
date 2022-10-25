@@ -2,7 +2,6 @@ import React from 'react';
 import { StulePost } from './StulePost';
 
 export const Post = (props) =>{
-debugger
  
     return(
       <StulePost  key={props.id}>
